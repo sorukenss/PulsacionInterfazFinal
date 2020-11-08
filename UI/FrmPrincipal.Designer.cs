@@ -122,7 +122,7 @@
             this.BtnAñadir.Name = "BtnAñadir";
             this.BtnAñadir.Size = new System.Drawing.Size(160, 40);
             this.BtnAñadir.TabIndex = 1;
-            this.BtnAñadir.Text = "Añadir";
+            this.BtnAñadir.Text = "Registrar";
             this.BtnAñadir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnAñadir.UseVisualStyleBackColor = true;
             this.BtnAñadir.Click += new System.EventHandler(this.BtnAñadir_Click);
