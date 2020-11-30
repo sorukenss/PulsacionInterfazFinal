@@ -31,7 +31,7 @@ namespace UI
             }
             else
             {
-                MessageBox.Show("Estado :" + respuesta.Abierto +"\nEstado :"+respuesta.Cerrado);
+                MessageBox.Show("Estado :" + respuesta.Abierto +"\nEstado :"+respuesta.Cerrado+"\nVersion:"+respuesta.Version);
               
             }
            

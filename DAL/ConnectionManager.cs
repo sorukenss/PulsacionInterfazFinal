@@ -31,5 +31,10 @@ namespace DAL
             return Connection.State.ToString();
         }
 
+        public string Version()
+        {
+            return Connection.ServerVersion.ToString();
+        }
+
     }
 }

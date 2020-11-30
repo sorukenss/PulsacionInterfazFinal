@@ -25,15 +25,16 @@ namespace BLL
         public RespuestaEstado ProbarConection()
         {
             RespuestaEstado res;
-            string abierto, cerrado;
+            string abierto, cerrado,version;
             try
             {
 
                 Connection.Open();
                 abierto = Connection.Estado();
+                version = Connection.Version();
                 Connection.Close();
                 cerrado = Connection.Estado();
-                res = new RespuestaEstado(abierto, cerrado);
+                res = new RespuestaEstado(abierto, cerrado,version);
 
             }
             catch(Exception e)
@@ -126,10 +127,11 @@ namespace BLL
         public  bool EstadoError { get; set; }
 
 
-        public RespuestaEstado(string open,string close)
+        public RespuestaEstado(string open,string close,string version)
         {
             Abierto = open;
             Cerrado = close;
+            Version = version;
             EstadoError = false;
         }
 
