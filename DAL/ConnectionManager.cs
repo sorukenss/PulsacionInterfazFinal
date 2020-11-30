@@ -25,5 +25,11 @@ namespace DAL
         {
             Connection.Close();
         }
+
+        public string Estado()
+        {
+            return Connection.State.ToString();
+        }
+
     }
 }

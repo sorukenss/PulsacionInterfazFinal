@@ -8,24 +8,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace UI
 {
     public partial class FrmConection : Form
     {
-        private SqlConnection con = null;
+        public PersonaService perser;
+       
         public FrmConection()
         {
             InitializeComponent();
+            perser = new PersonaService(ConfigConection.Connection);
         }
 
         private void FrmConection_Load(object sender, EventArgs e)
         {
-            string strConexion = "Data Source=.\\sqlexpress;" +
-"Initial Catalog=BDPulsacion; Integrated Security=True";
-            con = new SqlConnection(strConexion);
+            var respuesta = perser.ProbarConection();
+            if (respuesta.EstadoError == true)
+            {
+                MessageBox.Show("Error :" + respuesta.Error);
+            }
+            else
+            {
+                MessageBox.Show("Estado :" + respuesta.Abierto +"\nEstado :"+respuesta.Cerrado);
+              
+            }
+           
 
             
+
         }
     }
 }

@@ -18,8 +18,33 @@ namespace BLL
         {
             Connection = new ConnectionManager(connection);
             personaRepository = new PersonaRepository(Connection);
-            ConsultarPersonas();
+
         }
+
+
+        public RespuestaEstado ProbarConection()
+        {
+            RespuestaEstado res;
+            string abierto, cerrado;
+            try
+            {
+
+                Connection.Open();
+                abierto = Connection.Estado();
+                Connection.Close();
+                cerrado = Connection.Estado();
+                res = new RespuestaEstado(abierto, cerrado);
+
+            }
+            catch(Exception e)
+            {
+                res = new RespuestaEstado(e.Message);
+                
+            }
+            return res;
+        }
+
+
 
         public PersonaService()
         {
@@ -85,5 +110,37 @@ namespace BLL
             personas = personaRepository.ConsultarPersonas();
             return personas;
         }
+
+
+
     }
+
+    public class RespuestaEstado
+    {
+        public string Abierto { get; set; }
+        public string Cerrado { get; set; }
+
+        public string  Version { get; set; }
+
+        public string Error { get; set; }
+        public  bool EstadoError { get; set; }
+
+
+        public RespuestaEstado(string open,string close)
+        {
+            Abierto = open;
+            Cerrado = close;
+            EstadoError = false;
+        }
+
+        public RespuestaEstado(string mensaje)
+        {
+            Error = mensaje;
+            EstadoError = true;
+        }
+
+    }
+
+
+
 }
