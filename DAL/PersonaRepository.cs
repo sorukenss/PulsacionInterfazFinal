@@ -10,8 +10,15 @@ namespace DAL
 {
     public class PersonaRepository
     {
+        public ConnectionManager Connection;
         private string ruta = "Pulsacion.txt";
         public List<Persona> personas;
+        public PersonaRepository(ConnectionManager connection)
+        {
+            Connection = connection;
+            personas = new List<Persona>();
+        }
+
         public PersonaRepository()
         {
             personas = new List<Persona>();

@@ -36,6 +36,7 @@
             this.BntEliminar = new System.Windows.Forms.Button();
             this.BtnConsultar = new System.Windows.Forms.Button();
             this.BtnAñadir = new System.Windows.Forms.Button();
+            this.BtnConsultarConnection = new System.Windows.Forms.Button();
             this.PnFondo.SuspendLayout();
             this.PnOpciones.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // PnOpciones
             // 
             this.PnOpciones.BackColor = System.Drawing.SystemColors.Highlight;
+            this.PnOpciones.Controls.Add(this.BtnConsultarConnection);
             this.PnOpciones.Controls.Add(this.BtnModificar);
             this.PnOpciones.Controls.Add(this.BntEliminar);
             this.PnOpciones.Controls.Add(this.BtnConsultar);
@@ -127,6 +129,19 @@
             this.BtnAñadir.UseVisualStyleBackColor = true;
             this.BtnAñadir.Click += new System.EventHandler(this.BtnAñadir_Click);
             // 
+            // BtnConsultarConnection
+            // 
+            this.BtnConsultarConnection.Image = ((System.Drawing.Image)(resources.GetObject("BtnConsultarConnection.Image")));
+            this.BtnConsultarConnection.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnConsultarConnection.Location = new System.Drawing.Point(21, 368);
+            this.BtnConsultarConnection.Name = "BtnConsultarConnection";
+            this.BtnConsultarConnection.Size = new System.Drawing.Size(160, 40);
+            this.BtnConsultarConnection.TabIndex = 2;
+            this.BtnConsultarConnection.Text = "Consultar Conection";
+            this.BtnConsultarConnection.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnConsultarConnection.UseVisualStyleBackColor = true;
+            this.BtnConsultarConnection.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +169,7 @@
         private System.Windows.Forms.Button BtnConsultar;
         private System.Windows.Forms.Button BtnAñadir;
         private System.Windows.Forms.Panel PnFormulario;
+        private System.Windows.Forms.Button BtnConsultarConnection;
     }
 }
 

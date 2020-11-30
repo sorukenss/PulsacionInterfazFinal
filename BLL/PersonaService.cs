@@ -10,14 +10,21 @@ namespace BLL
 {
     public class PersonaService
     {
+        public ConnectionManager Connection;
         private PersonaRepository personaRepository;
         public List<Persona> personas;
         Persona persona;
+        public PersonaService(string connection)
+        {
+            Connection = new ConnectionManager(connection);
+            personaRepository = new PersonaRepository(Connection);
+            ConsultarPersonas();
+        }
+
         public PersonaService()
         {
             ConsultarPersonas();
         }
-
 
         public string Guardar(Persona persona)
         {
